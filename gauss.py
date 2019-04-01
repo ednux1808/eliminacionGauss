@@ -7,7 +7,7 @@ class Gauss(object):
         pass
 
     def eliminacion4x4(self):
-        os.system('cls') #linux is clear
+        os.system('clear') #linux is clear
         op.Problems.msj('s')
         print('Datos del Primer Array ')
         a11 = float(input())
@@ -15,7 +15,7 @@ class Gauss(object):
         a13 = float(input())
         a14 = float(input())
         b1 = float(input())
-        os.system('cls')
+        os.system('clear')
         op.Problems.msj('s')
         print('Datos del Segundo Array ')
         a21 = float(input())
@@ -23,7 +23,7 @@ class Gauss(object):
         a23 = float(input())
         a24 = float(input())
         b2 = float(input())
-        os.system('cls')
+        os.system('clear')
         op.Problems.msj('s')
         print('Datos del Tercer Array ')
         a31 = float(input())
@@ -31,7 +31,7 @@ class Gauss(object):
         a33 = float(input())
         a34 = float(input())
         b3 = float(input())
-        os.system('cls')
+        os.system('clear')
         op.Problems.msj('s')
         print('Datos del Cuarto Array ')
         a41 = float(input())
@@ -39,7 +39,7 @@ class Gauss(object):
         a43 = float(input())
         a44 = float(input())
         b4 =  float(input())
-        os.system('cls')
+        os.system('clear')
 
         a = np.array([[a11,a12,a13,a14,b1],[a21,a22,a23,a24,b2],[a31,a32,a33,a34,b3],[a41,a42,a43,a44,b4]])
        
