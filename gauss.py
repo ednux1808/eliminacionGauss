@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import Problems as op
 
 class Gauss(object):
@@ -7,7 +6,7 @@ class Gauss(object):
         pass
 
     def eliminacion4x4(self):
-        os.system('cls') #linux is clear
+        os.system('clear') #linux is clear
         op.Problems.msj('s')
         print('Datos del Primer Array ')
         a11 = float(input())
@@ -15,7 +14,7 @@ class Gauss(object):
         a13 = float(input())
         a14 = float(input())
         b1 = float(input())
-        os.system('cls')
+        os.system('clear')
         op.Problems.msj('s')
         print('Datos del Segundo Array ')
         a21 = float(input())
@@ -23,7 +22,7 @@ class Gauss(object):
         a23 = float(input())
         a24 = float(input())
         b2 = float(input())
-        os.system('cls')
+        os.system('clear')
         op.Problems.msj('s')
         print('Datos del Tercer Array ')
         a31 = float(input())
@@ -31,7 +30,7 @@ class Gauss(object):
         a33 = float(input())
         a34 = float(input())
         b3 = float(input())
-        os.system('cls')
+        os.system('clear')
         op.Problems.msj('s')
         print('Datos del Cuarto Array ')
         a41 = float(input())
@@ -39,9 +38,9 @@ class Gauss(object):
         a43 = float(input())
         a44 = float(input())
         b4 =  float(input())
-        os.system('cls')
+        os.system('clear')
 
-        a = np.array([[a11,a12,a13,a14,b1],[a21,a22,a23,a24,b2],[a31,a32,a33,a34,b3],[a41,a42,a43,a44,b4]])
+        a = [[a11,a12,a13,a14,b1],[a21,a22,a23,a24,b2],[a31,a32,a33,a34,b3],[a41,a42,a43,a44,b4]]
        
         op1 = op.Problems.form('d',a22,a21,a11,a12)
         op2 = op.Problems.form('d',a23,a21,a11,a13)
@@ -58,7 +57,7 @@ class Gauss(object):
         op11 = op.Problems.form('d',a44,a41,a11,a14)
         op12 = op.Problems.form('d',b4,a41,a11,b1)
        
-        b = np.array([[op1,op2,op3,op4],[op5,op6,op7,op8],[op9,op10,op11,op12]])
+        b = [[op1,op2,op3,op4],[op5,op6,op7,op8],[op9,op10,op11,op12]]
 
         ope1 = op.Problems.form('d',op6,op5,op1,op2)
         ope2 = op.Problems.form('d',op7,op5,op1,op3)
@@ -68,15 +67,15 @@ class Gauss(object):
         ope5 = op.Problems.form('d',op11,op9,op1,op3)
         ope6 = op.Problems.form('d',op12,op9,op1,op4)
 
-        c = np.array([[ope1,ope2,ope3],[ope4,ope5,ope6]])
+        c = [[ope1,ope2,ope3],[ope4,ope5,ope6]]
 
         oper1 = op.Problems.form('d',ope5,ope4,ope1,ope2)
         oper2 = op.Problems.form('d',ope6,ope4,ope1,ope3)
 
-        d = np.array([[oper1,oper2]])
+        d = [[oper1,oper2]]
 
 
-        l = np.array([[1,0,0,0],[a21/a11,1,0,0],[a31/a11,op5/op1,1,0],[a41/a11,op9/op1,ope4/ope1,1]])
+        l = [[1,0,0,0],[a21/a11,1,0,0],[a31/a11,op5/op1,1,0],[a41/a11,op9/op1,ope4/ope1,1]]
 
         print('Matriz L ')
         print(l[0][0]," ", l[0][1]," ", l[0][2]," ", l[0][3])
@@ -85,7 +84,7 @@ class Gauss(object):
         print("{0:.2f}".format(l[3][0])," ","{0:.2f}".format(l[3][1])," ","{0:.2f}".format(l[3][2])," ", l[3][3])
 
         print(' ')
-        u = np.array([[a11,a12,a13,a14],[0,op1,op2,op3],[0,0,ope1,ope2],[0,0,0,oper1]])
+        u = [[a11,a12,a13,a14],[0,op1,op2,op3],[0,0,ope1,ope2],[0,0,0,oper1]]
 
         print('Matriz U ')
         print(u[0][0], " ", u[0][1]," ",u[0][2]," ",u[0][3])
@@ -114,7 +113,7 @@ class Gauss(object):
         lu15 = op.Problems.form1('d',l[3][0],u[0][2],l[3][1],u[1][2],l[3][2],u[2][2],l[3][3],u[3][2])
         lu16 = op.Problems.form1('d',l[3][0],u[0][3],l[3][1],u[1][3],l[3][2],u[2][3],l[3][3],u[3][3])
    
-        lxu = np.array([[lu1,lu2,lu3,lu4],[lu5,lu6,lu7,lu8],[lu9,lu10,lu11,lu12],[lu13,lu14,lu15,lu16]])
+        lxu = [[lu1,lu2,lu3,lu4],[lu5,lu6,lu7,lu8],[lu9,lu10,lu11,lu12],[lu13,lu14,lu15,lu16]]
 
         print(' ')
         print(' Matriz L*U ')
